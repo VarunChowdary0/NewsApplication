@@ -1,13 +1,40 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+    --track-col:white;
+    --thumb-col:#ffc005;
 }
+body.dark{
+    --track-col: black;
+    --thumb-col:#555;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body::-webkit-scrollbar {
+    width: 6px;
+    margin-right: 2px;
+    background-color: var(--track-col);
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--thumb-col);
+    border-radius: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: transparent; /* Make the scroll track transparent */
+  }
+  
+  body::-webkit-scrollbar-corner {
+    background-color: transparent; /* Make the scroll bar corner transparent */
+  }
